@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Math on ttky</title>
+        <link>http://localhost:1313/categories/math/</link>
+        <description>Recent content in Math on ttky</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright><atom:link href="http://localhost:1313/categories/math/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数学公理-前置知识</title>
+        <link>http://localhost:1313/p/%E6%95%B0%E5%AD%A6%E5%85%AC%E7%90%86-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/%E6%95%B0%E5%AD%A6%E5%85%AC%E7%90%86-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
+        <description>&lt;h1 id=&#34;欧拉函数&#34;&gt;欧拉函数
+&lt;/h1&gt;&lt;h6 id=&#34;定义对于正整数n欧拉函数φn的值等于小于n的正整数中与n互质的数目&#34;&gt;定义：对于正整数n，欧拉函数φ(n)的值等于小于n的正整数中与n互质的数目。
+&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;比如φ(5)，小于5的正整数中与5互质的数有1，2，3，4，所以φ(5)＝4.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;性质&#34;&gt;性质：
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;如果n是质数，那么φ(n)=n-1&lt;/li&gt;
+&lt;li&gt;如果n=p*q,且&lt;font style=&#34;color:#DF2A3F;&#34;&gt;p，q均为质数&lt;/font&gt;，那么有φ(n)=φ(p)&lt;em&gt;φ(q)=(p-1)&lt;/em&gt;(q-1)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;:::tips
+性质2推导：&lt;/p&gt;
+&lt;p&gt;1&lt;em&gt;p，2&lt;/em&gt;p，3*p&amp;hellip;&amp;hellip;..（q-1)*p与n有公因数p，共有q-1个，同理可以推出与n有公因式q的式子有q-1个，并且这些式子不会出现重复（p，q互质），那么除去这些数剩下的就是于pq互质的数。&lt;/p&gt;
+&lt;p&gt;∴φ(p&lt;em&gt;q)=(p&lt;/em&gt;q-1)-(p-1)-(q-1)=(p-1)*(q-1)&lt;/p&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;由性质2，如果&lt;font style=&#34;color:#DF2A3F;&#34;&gt;p是质数&lt;/font&gt;，φ(p&lt;sup&gt;k&lt;/sup&gt;)=p&lt;sup&gt;k&lt;/sup&gt; - p&lt;sup&gt;k-1&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;对于任意正整数n：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$ \varphi(n)=n*\prod \limits_{i=0}^n{1-\frac{1}{p_i}}（其中p是n的质因数） $&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;若&lt;font style=&#34;color:#DF2A3F;&#34;&gt;a为质数&lt;/font&gt;，b mod a＝0，则φ(a&lt;em&gt;b)=a&lt;/em&gt;φ(b)  (注意与性质2区分）&lt;/li&gt;
+&lt;li&gt;结合性质2与性质5，若n=p&lt;sup&gt;x&lt;/sup&gt;q&lt;sup&gt;y&lt;/sup&gt; ,p,q均为质数，则$ \varphi(n)=p^{x-1}&lt;em&gt;q^{y-1}&lt;/em&gt;(p-1)*(q-1) $&lt;/li&gt;
+&lt;li&gt;所有小于n且与n互质的数的和sum：$ sum=n*\frac{\varphi(n)}{2} $&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;:::tips
+性质7证明：&lt;/p&gt;
+&lt;p&gt;先证明一条重要的性质：$ \color{blue} 若gcd(n,i)=1,则gcd(n,n-i)=1 $&lt;/p&gt;
+&lt;p&gt;假设若_gcd(n,i)=1_,则_gcd(n,n-i)=k_，k不为1&lt;/p&gt;
+&lt;p&gt;那么有_(n-i) &lt;em&gt;mod&lt;/em&gt; k =0,n &lt;em&gt;mod&lt;/em&gt; k=0_&lt;/p&gt;
+&lt;p&gt;∴ &lt;em&gt;i &lt;em&gt;mod&lt;/em&gt; k =0&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;所以_gcd(n,i)=k_,与假设矛盾，假设成立。&lt;/p&gt;
+&lt;p&gt;所以在所有小于n且与n互质的数的集合A中的任意元素a，均有另一个元素b使得a+b=n。接下来不难得到性质7&lt;/p&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;$ n=\sum_{d|n}\varphi(d) $,d|n意思是n是d的倍数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;欧拉定理&#34;&gt;欧拉定理
+&lt;/h1&gt;&lt;h5 id=&#34;内容对于一对互质的整数am有-avarphimequiv1-mod--m-&#34;&gt;&lt;strong&gt;内容&lt;/strong&gt;：对于一对互质的整数a，m，有$ a^{\varphi(m)}\equiv1\ (mod \ m) $
+&lt;/h5&gt;&lt;p&gt;证明不会&lt;/p&gt;
+&lt;h2 id=&#34;欧拉定理的扩展&#34;&gt;欧拉定理的扩展：
+&lt;/h2&gt;&lt;h3 id=&#34;费马小定理&#34;&gt;费马小定理：
+&lt;/h3&gt;&lt;p&gt;当p为素数，则$ a^{\ p-1}\equiv1\ (mod \ p) $&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;引理：****&lt;font style=&#34;color:#DF2A3F;&#34;&gt;记&lt;/font&gt;&lt;/strong&gt;$ dp=d \ mod\ (p-1) $&lt;strong&gt;&lt;font style=&#34;color:#DF2A3F;&#34;&gt;，则有&lt;/font&gt;&lt;/strong&gt;$ a^d\equiv a^{dp}\ (mod p) $&lt;/p&gt;
+&lt;h3 id=&#34;扩展欧拉定理&#34;&gt;扩展欧拉定理：
+&lt;/h3&gt;&lt;p&gt;扩展到不要求互质。&lt;/p&gt;
+&lt;p&gt;$ \begin{equation}\label{eq2}
+a^C \equiv\left{
+\begin{array}\
+a^{c \ mod \ \varphi(m)} &amp;amp;\ \  gcd(a,m)=1\
+a^c &amp;amp; \ \ gcd(a,m)\ne1&amp;amp;,c&amp;lt;\varphi(m) \
+a^{c \ mod \ \varphi(m) +\varphi(m)} &amp;amp;\ \ gcd(a,m)\neq1&amp;amp;,c \geq \varphi(m)
+\end{array}
+\right.
+\end{equation}  $&lt;/p&gt;
+&lt;h1 id=&#34;威尔逊定理&#34;&gt;威尔逊定理
+&lt;/h1&gt;&lt;h6 id=&#34;内容p为素数的充分必要条件是-p-1-equiv--1--mod-p-&#34;&gt;内容：p为素数的充分必要条件是：$ (p-1)! \equiv -1 \ (mod\ p) $
+&lt;/h6&gt;&lt;blockquote&gt;
+&lt;p&gt;#考的不多但是得会,常用于化简&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;中国剩余定理&#34;&gt;中国剩余定理
+&lt;/h1&gt;&lt;p&gt;设定一组正整数m&lt;sub&gt;1&lt;/sub&gt;,m&lt;sub&gt;2&lt;/sub&gt;,&amp;hellip;&amp;hellip;.,m&lt;sub&gt;k&lt;/sub&gt; ,俩俩互素，则同余方程组：$ \begin{equation}\label{eq2}
+\left{
+\begin{array}\
+x \equiv a_1 (mod \ \ m_1)\
+x \equiv a_2 (mod \ \ m_2)\
+&amp;hellip;&amp;hellip;\
+x \equiv a_k (mod \ \ m_k)\
+\end{array}
+\right.
+\end{equation}  $有整数解。&lt;/p&gt;
+&lt;p&gt;且在模$ M=m_1&lt;em&gt;m_2&lt;/em&gt;m_3*&amp;hellip;*m_k $下的解是唯一的，解为：&lt;/p&gt;
+&lt;p&gt;$ x \equiv\ (a_1M_1M_1^{-1} + \ a_2M_2M_2^{-1} + &amp;hellip;. + \ a_kM_kM_k^{-1} ) \ \ (mod \ \ M) $&lt;/p&gt;
+&lt;p&gt;简记为：&lt;/p&gt;
+&lt;p&gt;$ x \equiv\ \sum_{i=1}^ka_iM_iM_i^{-1} \ \ (mod \ \ M),其中M_i=\frac{M}{m_i},M_i^{-1}=M_i^{-1} \ mod\ m_i $&lt;/p&gt;
+&lt;h3 id=&#34;用途&#34;&gt;用途：
+&lt;/h3&gt;&lt;p&gt;1.在RSA算法中，可以用于应对一些特殊的情况，如有时出现无法求d的情况&lt;/p&gt;
+&lt;p&gt;:::color1
+m1,m2是互质的俩个正整数，对任意的b1，b2：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;       $   \begin{equation}\label{eq2}
+\left\{
+\begin{array}\\
+x \equiv b_1 \ (mod \ m_1)\\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;x\equiv b_2 \ (mod \ m_2)
+\end{array}
+\right.
+\end{equation}  $&lt;/p&gt;
+&lt;p&gt;套用公式我们可以得到：&lt;/p&gt;
+&lt;p&gt;$ x \equiv b_1M_1M_1^{-1}+b_2M_2M_2^{-1} \ \ (mod\ m_1m_2) $&lt;/p&gt;
+&lt;p&gt;存在第二种表达：&lt;/p&gt;
+&lt;p&gt;$ x \equiv b_1sm_1+b_2tm_2 \ \ (mod\ m_1m_2)\ \ \ \ \ s,t满足sm_1+tm_2=1 $&lt;/p&gt;
+&lt;p&gt;在python的第三方库中可以使用gcdtxt函数求解得到s，t&lt;/p&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;p&gt;2.正常流程如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/43221518/1714724567925-63742e68-0591-4b22-981f-f5904fb725ec.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;#此篇以简单介绍为主，具体使用场景因题而异&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;扩展中国剩余定理&#34;&gt;扩展中国剩余定理：
+&lt;/h2&gt;&lt;p&gt;对于方程组$   \begin{equation}\label{eq2}
+\left{
+\begin{array}\
+x \equiv a_1 \ (mod \ m_1)\
+x\equiv a_2 \ (mod \ m_2)
+\end{array}
+\right.
+\end{equation}  $,记特解为$ x_0 $，则有通解$ x=x_0-k*lcm(m_1,m_2) $,即这个方程组等价于$ x\equiv x_0\ (mod\ lcm(m_1,m_2)) $。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;:::info
+原方程组可以改写为：&lt;/p&gt;
+&lt;p&gt;$   \begin{equation}\label{eq2}
+\left{
+\begin{array}\
+x + pm_1=a_1\
+x+qm_2=a_2
+\end{array}
+\right.
+\end{equation}  $&lt;/p&gt;
+&lt;p&gt;于是：&lt;/p&gt;
+&lt;p&gt;$ pm_1-qm_2=a_1-a_2 $&lt;/p&gt;
+&lt;p&gt;这个方程的整个解系为：&lt;/p&gt;
+&lt;p&gt;$ \huge\begin{equation}\label{eq2}
+\left{
+\begin{array}\
+p=p_0+k\frac{m_1}{gcd(m_1,m_2)}\
+q=q_0-k\frac{m_2}{gcd(m_1,m_2)}
+\end{array}
+\right.
+\end{equation},p_0,q_0是特解 $&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/43221518/1716559105701-3ee28055-06a2-4971-abc6-54bce1a9f35f.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;p&gt;利用这个性质我们便可以将模不互素的方程合并为一个方程，再使用中国剩余定理即可解决问题。&lt;/p&gt;
+&lt;h1 id=&#34;原根&#34;&gt;原根
+&lt;/h1&gt;&lt;h6 id=&#34;定义若na为正整数且na互质令-ad-equiv-1--mod--n-如果使得该式成立的最小的正整数-deltana--dvarphin-则a是模n的原根&#34;&gt;定义：若n，a为正整数，且n，a互质，令$ a^d \equiv 1 \ (mod \ n) $,如果使得该式成立的最小的正整数$ \delta(n,a) $=$ d=\varphi(n) $,则a是模n的原根
+&lt;/h6&gt;&lt;h1 id=&#34;离散对数&#34;&gt;离散对数
+&lt;/h1&gt;&lt;h6 id=&#34;如果对于一个整数b和质数p的一个原根a可以找到唯一i使得-bai-mod--p-其中i小于等于p-1成立则i被称为b的以a为基数的模p的离散对数&#34;&gt;如果对于一个整数b和质数p的一个原根a，可以找到唯一i使得：$ b=a^i\ (mod \ p) $，其中i小于等于p-1成立，则i被称为b的以a为基数的模p的离散对数
+&lt;/h6&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
