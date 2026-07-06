@@ -4,10 +4,9 @@ published: 1970-01-02
 description: 展示 Firefly 主题对 KaTeX 数学公式的支持，包括行内公式、块级公式和复杂数学符号。
 tags: [KaTeX, Math, 示例]
 category: 文章示例
-draft: false
+draft: true
 image: api
 ---
-
 本文展示了 [Firefly](https://github.com/CuteLeaf/Firefly) 主题对 KaTeX 数学公式的渲染支持。
 
 ## 行内公式 (Inline)
@@ -78,14 +77,15 @@ $$
 
 ## 更多符号
 
-| 符号 | 代码 | 渲染结果 |
-| :--- | :--- | :--- |
-| Alpha | `\alpha` | $\alpha$ |
-| Beta | `\beta` | $\beta$ |
-| Gamma | `\Gamma` | $\Gamma$ |
-| Pi | `\pi` | $\pi$ |
-| Infinity | `\infty` | $\infty$ |
+
+| 符号        | 代码          | 渲染结果      |
+| :---------- | :------------ | :------------ |
+| Alpha       | `\alpha`      | $\alpha$      |
+| Beta        | `\beta`       | $\beta$       |
+| Gamma       | `\Gamma`      | $\Gamma$      |
+| Pi          | `\pi`         | $\pi$         |
+| Infinity    | `\infty`      | $\infty$      |
 | Right Arrow | `\rightarrow` | $\rightarrow$ |
-| Partial | `\partial` | $\partial$ |
+| Partial     | `\partial`    | $\partial$    |
 
 更多 KaTeX 语法请参考 [KaTeX Supported Functions](https://katex.org/docs/supported.html)。

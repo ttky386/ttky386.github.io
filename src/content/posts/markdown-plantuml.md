@@ -4,9 +4,8 @@ published: 1970-01-01
 description: 用于验证 Firefly 中 PlantUML 插件渲染、主题切换与交互能力的示例文章。
 tags: [PlantUML, Firefly, Markdown]
 category: 文章示例
-draft: false
+draft: true
 ---
-
 ## Markdown 中 PlantUML 图表指南
 
 PlantUML 是一种使用纯文本描述图表的工具。你只需要写一段结构化语法，就可以生成时序图、类图、用例图、活动图等常见工程图。
@@ -247,4 +246,3 @@ Rel(web, plantuml, "请求图表 SVG")
 LAYOUT_LEFT_RIGHT()
 @enduml
 ```
-
